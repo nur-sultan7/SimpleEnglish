@@ -11,12 +11,21 @@ public class MainActivity extends AppCompatActivity {
 
     CardView words;
     CardView sentences;
+    CardView grammar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         words=findViewById(R.id.cardViewWords);
         sentences=findViewById(R.id.cardViewSentences);
+        grammar=findViewById(R.id.cardViewGrammar);
+        grammar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GrammarActivity.class);
+                startActivity(intent);
+            }
+        });
         words.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

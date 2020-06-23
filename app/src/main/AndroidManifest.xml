@@ -24,7 +24,8 @@
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/back4app_client_key" />
 
-        <activity android:name=".WordsActivity"></activity>
+        <activity android:name=".WordsActivity"/>
+        <activity android:name=".GrammarActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
