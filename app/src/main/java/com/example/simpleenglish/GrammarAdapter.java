@@ -19,7 +19,12 @@ public class GrammarAdapter extends RecyclerView.Adapter<GrammarAdapter.GrammarH
     private List<Grammar> grammarList ;
     private static OnItemClickListener onItemClickListener;
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+    public Grammar getItemByPosition(int position)
+    {
+        return grammarList.get(position);
+    }
+
+    void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 

@@ -44,11 +44,18 @@ public class GrammarActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-     recyclerView.setOnClickListener(new GrammarAdapter.OnItemClickListener(){
-
+     adapter.setOnItemClickListener(new GrammarAdapter.OnItemClickListener(){
          @Override
          public void onClick(int position) {
-             Intent intent = new Intent(GrammarActivity.this,);
+             Grammar grammar = adapter.getItemByPosition(position);
+             Intent intent = new Intent(GrammarActivity.this,GrammarDetailActivity.class);
+             intent.putExtra("name",grammar.getName());
+             intent.putExtra("in_russian",grammar.getInRussian());
+             intent.putExtra("image",grammar.getImage());
+             intent.putExtra("text",grammar.getText());
+             intent.putExtra("example",grammar.getExample());
+             intent.putExtra("example_in_russian",grammar.getExample_in_russian());
+             startActivity(intent);
          }
      });
 
@@ -88,7 +95,7 @@ public class GrammarActivity extends AppCompatActivity {
                     grammarList.add(new Grammar(parseObject.getString("name"),
                             parseObject.getString("in_russian"),
                             parseObject.getString("text"),
-                            imageFile.getUrl()));
+                            imageFile.getUrl(),parseObject.getString("example"),parseObject.getString("example_in_russian")));
                 }
             }
             return null;

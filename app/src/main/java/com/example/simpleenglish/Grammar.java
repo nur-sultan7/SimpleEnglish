@@ -5,12 +5,32 @@ public class Grammar {
     private String inRussian;
     private String text;
     private String image;
+    private String example;
+    private String example_in_russian;
 
-    public Grammar(String name, String inRussian, String text, String image) {
+    public Grammar(String name, String inRussian, String text, String image, String example, String example_in_russian) {
         this.name = name;
         this.inRussian = inRussian;
         this.text = text;
         this.image = image;
+        this.example=example;
+        this.example_in_russian=example_in_russian;
+    }
+
+    public String getExample() {
+        return example;
+    }
+
+    public void setExample(String example) {
+        this.example = example;
+    }
+
+    public String getExample_in_russian() {
+        return example_in_russian;
+    }
+
+    public void setExample_in_russian(String example_in_russian) {
+        this.example_in_russian = example_in_russian;
     }
 
     public String getName() {
