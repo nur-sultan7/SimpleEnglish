@@ -1,10 +1,13 @@
 package com.example.simpleenglish;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,6 +40,20 @@ public class GrammarActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         new LoadGrammar().execute();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+     recyclerView.setOnClickListener(new GrammarAdapter.OnItemClickListener(){
+
+         @Override
+         public void onClick(int position) {
+             Intent intent = new Intent(GrammarActivity.this,);
+         }
+     });
+
+    }
+
     private class LoadGrammar extends AsyncTask<Void,Void,Void>
     {
 

@@ -16,7 +16,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GrammarAdapter extends RecyclerView.Adapter<GrammarAdapter.GrammarHolder> {
-    List<Grammar> grammarList ;
+    private List<Grammar> grammarList ;
+    private static OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    interface OnItemClickListener
+    {
+        void onClick(int position);
+    }
 
     public void setGrammarList(List<Grammar> grammarList) {
         this.grammarList = grammarList;
@@ -59,6 +69,15 @@ public class GrammarAdapter extends RecyclerView.Adapter<GrammarAdapter.GrammarH
             imageViewGrammar=itemView.findViewById(R.id.imageViewGrammar);
             textViewName=itemView.findViewById(R.id.textViewGrammarName);
             textViewInRussia=itemView.findViewById(R.id.textViewGrammarInRussian);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onItemClickListener!=null)
+                    {
+                        onItemClickListener.onClick(getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 }

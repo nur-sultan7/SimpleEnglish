@@ -12,7 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SentencesActivity"></activity>
+        <activity
+            android:name=".ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.simpleenglish.ItemListActivity" />
+        </activity>
+        <activity android:name=".SentencesActivity" />
 
         <meta-data
             android:name="com.parse.SERVER_URL"
@@ -24,8 +37,8 @@
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/back4app_client_key" />
 
-        <activity android:name=".WordsActivity"/>
-        <activity android:name=".GrammarActivity"/>
+        <activity android:name=".WordsActivity" />
+        <activity android:name=".GrammarActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
