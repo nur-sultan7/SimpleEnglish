@@ -15,6 +15,8 @@ public class GrammarDetailActivity extends AppCompatActivity {
     TextView textViewGrammarText;
     TextView textViewExample;
     TextView textViewExampleInRussian;
+    TextView textViewExample2;
+    TextView textViewExampleInRussian2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,8 @@ public class GrammarDetailActivity extends AppCompatActivity {
         textViewGrammarText=findViewById(R.id.textViewGrammarText);
         textViewExample=findViewById(R.id.textViewGrammarExample);
         textViewExampleInRussian=findViewById(R.id.textViewGrammarExampleInRussian);
+        textViewExample2=findViewById(R.id.textViewExample2);
+        textViewExampleInRussian2=findViewById(R.id.textViewExampleInRussian2);
         if (getIntent()!=null)
         {
             Picasso.get().load(getIntent().getStringExtra("image"))
@@ -32,6 +36,8 @@ public class GrammarDetailActivity extends AppCompatActivity {
             textViewGrammarText.setText(getIntent().getStringExtra("text"));
             textViewExample.setText(getIntent().getStringExtra("example"));
             textViewExampleInRussian.setText(getIntent().getStringExtra("example_in_russian"));
+            textViewExample2.setText(getIntent().getStringExtra("example2"));
+            textViewExampleInRussian2.setText(getIntent().getStringExtra("example_in_russian2"));
         }
     }
 }

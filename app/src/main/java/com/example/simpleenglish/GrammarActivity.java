@@ -55,6 +55,8 @@ public class GrammarActivity extends AppCompatActivity {
              intent.putExtra("text",grammar.getText());
              intent.putExtra("example",grammar.getExample());
              intent.putExtra("example_in_russian",grammar.getExample_in_russian());
+             intent.putExtra("example2",grammar.getExample2());
+             intent.putExtra("example_in_russian2",grammar.getExample_in_russian2());
              startActivity(intent);
          }
      });
@@ -95,7 +97,11 @@ public class GrammarActivity extends AppCompatActivity {
                     grammarList.add(new Grammar(parseObject.getString("name"),
                             parseObject.getString("in_russian"),
                             parseObject.getString("text"),
-                            imageFile.getUrl(),parseObject.getString("example"),parseObject.getString("example_in_russian")));
+                            imageFile.getUrl(),
+                            parseObject.getString("example"),
+                            parseObject.getString("example_in_russian"),
+                            parseObject.getString("example2"),
+                            parseObject.getString("example_in_russian2")));
                 }
             }
             return null;
